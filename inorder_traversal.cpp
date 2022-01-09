@@ -18,7 +18,7 @@ class Solution {
 
             TreeNode* temp = root;
 
-            while(temp)
+            while(temp || !stack.empty())
             {
                 if(temp)
                 {

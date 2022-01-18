@@ -4,13 +4,13 @@ typedef pair<int,int> pii;
 
 void printpath(map<pii,pii>mp, pii u)
 {
-    if(u.first==0 && u.second==0)
+    if(u.first==0 && u.second==0) //if both the jug in that state is 0 print 0 or 0
     {
         cout<<0<<" "<<0<<endl;
         return;
     }
 
-    printpath(mp,mp[u]);
+    printpath(mp,mp[u]); //if both are not zero then map it to that particuar pair 
     cout<<u.first<<" "<<u.second<<endl;
 }
 
@@ -57,7 +57,8 @@ void BFS(int a, int b, int target)
                 }
             }
 
-            else {
+            else
+            {
                 if (u.first != 0)
                 {
                     cout<<0<<" "<<u.second<<endl; //emptying jug1 since target found in jug2
@@ -76,7 +77,7 @@ void BFS(int a, int b, int target)
         if(m[{a,u.second}] != 1) //state in which jug1 is full, if this state already not there push it to the queue
         {
             q.push({a,u.second});
-            mp[{a,u.second}]=u;
+            mp[{a,u.second}]=u; //marking this pair with current pair
         }
 
         //trasfer from jug1 to jug2
@@ -88,7 +89,7 @@ void BFS(int a, int b, int target)
             if(m[{c,b}]!=1)
             {
                 q.push({c,b});
-                mp[{c,b}]=u;
+                mp[{c,b}]=u; 
             }
         }
 
@@ -111,7 +112,7 @@ void BFS(int a, int b, int target)
             if(m[{a,c}]!=1)
             {
                 q.push({a,c});
-                mp[{a,c}]=u;
+                mp[{a,c}]=u; 
             }
         }
 

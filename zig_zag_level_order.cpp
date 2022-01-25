@@ -31,12 +31,12 @@ public:
 
             while(sz--)
             {
-                TreeNode* t = q.front;
+                TreeNode* t = q.front();
                 temp.push_back(t->val);
 
                 q.pop();
 
-                if(temp->left)
+                if(t->left)
                 {
                     q.push(t->left);
                 }
